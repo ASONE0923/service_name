@@ -42,8 +42,11 @@ QOL向上アプリです。
 
 
 　■スケジュール
-　企画〜技術調査：12/4〆切
-　README〜ER図作成：12/10 〆切
-　メイン機能実装：12/10 - 1/15
-　β版をRUNTEQ内リリース（MVP）：1/15〆切
-　本番リリース：1月末
+　企画〜技術調査：12/2〆切
+　README〜ER図作成：12/25 〆切
+　メイン機能実装：12/26 - 1/31
+　β版をRUNTEQ内リリース（MVP）：2/2〆切
+　本番リリース：2/12
+
+  ■画面遷移図
+  https://www.figma.com/file/aZFQW8a2i9ykyBjzpzI2bV/Untitled?node-id=0%3A1&t=uxYX91ZRalYB1CaP-1
