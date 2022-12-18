@@ -48,4 +48,5 @@ QOL向上アプリです。
 　β版をRUNTEQ内リリース（MVP）：2/2〆切
 　本番リリース：2/12
 
- 
+　■画面遷移図
+　https://www.figma.com/file/aZFQW8a2i9ykyBjzpzI2bV/Untitled?node-id=0%3A1&t=uxYX91ZRalYB1CaP-1
