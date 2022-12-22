@@ -52,4 +52,4 @@
 　https://www.figma.com/file/aZFQW8a2i9ykyBjzpzI2bV/Untitled?node-id=0%3A1&t=uxYX91ZRalYB1CaP-1
 
 ■ER図
-https://i.gyazo.com/f9a6df0630d5e595a70b6d54d83563bc.png
+[![Image from Gyazo](https://i.gyazo.com/13769691420836d1bafd2390d52147ef.png)](https://gyazo.com/13769691420836d1bafd2390d52147ef)
