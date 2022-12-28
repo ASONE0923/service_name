@@ -1,0 +1,17 @@
+current directory: /Users/asone0420/workspace/runteq/service_name/vendor/bundle/ruby/2.5.0/gems/digest-3.1.1/ext/digest/sha2
+/Users/asone0420/.rbenv/versions/2.5.1/bin/ruby -I /Users/asone0420/.rbenv/versions/2.5.1/lib/ruby/site_ruby/2.5.0 -r ./siteconf20221228-43097-3hvsok.rb extconf.rb
+checking for CommonCrypto/CommonDigest.h... yes
+checking for sys/cdefs.h... yes
+creating Makefile
+
+current directory: /Users/asone0420/workspace/runteq/service_name/vendor/bundle/ruby/2.5.0/gems/digest-3.1.1/ext/digest/sha2
+make DESTDIR\= clean
+
+current directory: /Users/asone0420/workspace/runteq/service_name/vendor/bundle/ruby/2.5.0/gems/digest-3.1.1/ext/digest/sha2
+make DESTDIR\=
+compiling sha2init.c
+linking shared-object digest/sha2.bundle
+
+current directory: /Users/asone0420/workspace/runteq/service_name/vendor/bundle/ruby/2.5.0/gems/digest-3.1.1/ext/digest/sha2
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 sha2.bundle ./.gem.20221228-43097-g9u4p1/digest

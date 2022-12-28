@@ -1,0 +1,335 @@
+have_library: checking for BIO_read() in -lcrypto... -------------------- yes
+
+"clang -o conftest -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin21 -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/Users/asone0420/.rbenv/versions/2.5.1/openssl/include -I/Users/asone0420/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -DUSE_FFI_CLOSURE_ALLOC -fno-common -pipe conftest.c  -L. -L/Users/asone0420/.rbenv/versions/2.5.1/lib -L/Users/asone0420/.rbenv/versions/2.5.1/openssl/lib -L. -L/Users/asone0420/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib     -lruby.2.5.1  -lpthread -ldl -lobjc "
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return 0;
+6: }
+/* end */
+
+"clang -o conftest -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin21 -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/Users/asone0420/.rbenv/versions/2.5.1/openssl/include -I/Users/asone0420/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -DUSE_FFI_CLOSURE_ALLOC -fno-common -pipe conftest.c  -L. -L/Users/asone0420/.rbenv/versions/2.5.1/lib -L/Users/asone0420/.rbenv/versions/2.5.1/openssl/lib -L. -L/Users/asone0420/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib     -lruby.2.5.1 -lcrypto  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'BIO_read'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))BIO_read; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))BIO_read; return !p; }
+/* end */
+
+"clang -o conftest -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin21 -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/Users/asone0420/.rbenv/versions/2.5.1/openssl/include -I/Users/asone0420/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -DUSE_FFI_CLOSURE_ALLOC -fno-common -pipe conftest.c  -L. -L/Users/asone0420/.rbenv/versions/2.5.1/lib -L/Users/asone0420/.rbenv/versions/2.5.1/openssl/lib -L. -L/Users/asone0420/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib     -lruby.2.5.1 -lcrypto  -lpthread -ldl -lobjc "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void BIO_read();
+14: int t(void) { BIO_read(); return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for SSL_CTX_new() in -lssl... -------------------- yes
+
+"clang -o conftest -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin21 -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/Users/asone0420/.rbenv/versions/2.5.1/openssl/include -I/Users/asone0420/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -DUSE_FFI_CLOSURE_ALLOC -fno-common -pipe conftest.c  -L. -L/Users/asone0420/.rbenv/versions/2.5.1/lib -L/Users/asone0420/.rbenv/versions/2.5.1/openssl/lib -L. -L/Users/asone0420/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lcrypto  -lruby.2.5.1 -lssl -lcrypto  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'SSL_CTX_new'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))SSL_CTX_new; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))SSL_CTX_new; return !p; }
+/* end */
+
+"clang -o conftest -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin21 -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/Users/asone0420/.rbenv/versions/2.5.1/openssl/include -I/Users/asone0420/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -DUSE_FFI_CLOSURE_ALLOC -fno-common -pipe conftest.c  -L. -L/Users/asone0420/.rbenv/versions/2.5.1/lib -L/Users/asone0420/.rbenv/versions/2.5.1/openssl/lib -L. -L/Users/asone0420/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lcrypto  -lruby.2.5.1 -lssl -lcrypto  -lpthread -ldl -lobjc "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void SSL_CTX_new();
+14: int t(void) { SSL_CTX_new(); return 0; }
+/* end */
+
+--------------------
+
+have_header: checking for openssl/bio.h... -------------------- yes
+
+"clang -E -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin21 -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/Users/asone0420/.rbenv/versions/2.5.1/openssl/include -I/Users/asone0420/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -DUSE_FFI_CLOSURE_ALLOC -fno-common -pipe  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <openssl/bio.h>
+/* end */
+
+--------------------
+
+have_func: checking for DTLS_method() in openssl/ssl.h... -------------------- yes
+
+"clang -o conftest -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin21 -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/Users/asone0420/.rbenv/versions/2.5.1/openssl/include -I/Users/asone0420/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -DUSE_FFI_CLOSURE_ALLOC -fno-common -pipe conftest.c  -L. -L/Users/asone0420/.rbenv/versions/2.5.1/lib -L/Users/asone0420/.rbenv/versions/2.5.1/openssl/lib -L. -L/Users/asone0420/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lssl -lcrypto  -lruby.2.5.1 -lssl -lcrypto  -lpthread -ldl -lobjc "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <openssl/ssl.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     printf("%p", &t);
+11:   }
+12: 
+13:   return 0;
+14: }
+15: int t(void) { void ((*volatile p)()); p = (void ((*)()))DTLS_method; return !p; }
+/* end */
+
+--------------------
+
+have_func: checking for TLS_server_method() in openssl/ssl.h... -------------------- yes
+
+"clang -o conftest -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin21 -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/Users/asone0420/.rbenv/versions/2.5.1/openssl/include -I/Users/asone0420/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -DUSE_FFI_CLOSURE_ALLOC -fno-common -pipe conftest.c  -L. -L/Users/asone0420/.rbenv/versions/2.5.1/lib -L/Users/asone0420/.rbenv/versions/2.5.1/openssl/lib -L. -L/Users/asone0420/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lssl -lcrypto  -lruby.2.5.1 -lssl -lcrypto  -lpthread -ldl -lobjc "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <openssl/ssl.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     printf("%p", &t);
+11:   }
+12: 
+13:   return 0;
+14: }
+15: int t(void) { void ((*volatile p)()); p = (void ((*)()))TLS_server_method; return !p; }
+/* end */
+
+--------------------
+
+have_func: checking for SSL_CTX_set_min_proto_version(NULL, 0) in openssl/ssl.h... -------------------- yes
+
+"clang -o conftest -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin21 -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/Users/asone0420/.rbenv/versions/2.5.1/openssl/include -I/Users/asone0420/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -DUSE_FFI_CLOSURE_ALLOC -fno-common -pipe conftest.c  -L. -L/Users/asone0420/.rbenv/versions/2.5.1/lib -L/Users/asone0420/.rbenv/versions/2.5.1/openssl/lib -L. -L/Users/asone0420/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lssl -lcrypto  -lruby.2.5.1 -lssl -lcrypto  -lpthread -ldl -lobjc "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <openssl/ssl.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     printf("%p", &t);
+11:   }
+12: 
+13:   return 0;
+14: }
+15: 
+16: int t(void) { SSL_CTX_set_min_proto_version(NULL, 0); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for X509_STORE_up_ref()... -------------------- yes
+
+"clang -o conftest -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin21 -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/Users/asone0420/.rbenv/versions/2.5.1/openssl/include -I/Users/asone0420/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -DUSE_FFI_CLOSURE_ALLOC -fno-common -pipe conftest.c  -L. -L/Users/asone0420/.rbenv/versions/2.5.1/lib -L/Users/asone0420/.rbenv/versions/2.5.1/openssl/lib -L. -L/Users/asone0420/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lssl -lcrypto  -lruby.2.5.1 -lssl -lcrypto  -lpthread -ldl -lobjc "
+conftest.c:13:57: error: use of undeclared identifier 'X509_STORE_up_ref'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))X509_STORE_up_ref; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: int t(void) { void ((*volatile p)()); p = (void ((*)()))X509_STORE_up_ref; return !p; }
+/* end */
+
+"clang -o conftest -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin21 -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/Users/asone0420/.rbenv/versions/2.5.1/openssl/include -I/Users/asone0420/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -DUSE_FFI_CLOSURE_ALLOC -fno-common -pipe conftest.c  -L. -L/Users/asone0420/.rbenv/versions/2.5.1/lib -L/Users/asone0420/.rbenv/versions/2.5.1/openssl/lib -L. -L/Users/asone0420/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lssl -lcrypto  -lruby.2.5.1 -lssl -lcrypto  -lpthread -ldl -lobjc "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     printf("%p", &t);
+ 9:   }
+10: 
+11:   return 0;
+12: }
+13: extern void X509_STORE_up_ref();
+14: int t(void) { X509_STORE_up_ref(); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for SSL_CTX_set_ecdh_auto(NULL, 0) in openssl/ssl.h... -------------------- yes
+
+"clang -o conftest -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin21 -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/Users/asone0420/.rbenv/versions/2.5.1/openssl/include -I/Users/asone0420/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -DUSE_FFI_CLOSURE_ALLOC -fno-common -pipe conftest.c  -L. -L/Users/asone0420/.rbenv/versions/2.5.1/lib -L/Users/asone0420/.rbenv/versions/2.5.1/openssl/lib -L. -L/Users/asone0420/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lssl -lcrypto  -lruby.2.5.1 -lssl -lcrypto  -lpthread -ldl -lobjc "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <openssl/ssl.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     printf("%p", &t);
+11:   }
+12: 
+13:   return 0;
+14: }
+15: 
+16: int t(void) { SSL_CTX_set_ecdh_auto(NULL, 0); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for SSL_CTX_set_dh_auto(NULL, 0) in openssl/ssl.h... -------------------- yes
+
+"clang -o conftest -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin21 -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/Users/asone0420/.rbenv/versions/2.5.1/openssl/include -I/Users/asone0420/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -DUSE_FFI_CLOSURE_ALLOC -fno-common -pipe conftest.c  -L. -L/Users/asone0420/.rbenv/versions/2.5.1/lib -L/Users/asone0420/.rbenv/versions/2.5.1/openssl/lib -L. -L/Users/asone0420/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lssl -lcrypto  -lruby.2.5.1 -lssl -lcrypto  -lpthread -ldl -lobjc "
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <openssl/ssl.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     printf("%p", &t);
+11:   }
+12: 
+13:   return 0;
+14: }
+15: 
+16: int t(void) { SSL_CTX_set_dh_auto(NULL, 0); return 0; }
+/* end */
+
+--------------------
+
+have_func: checking for SSL_get1_peer_certificate() in openssl/ssl.h... -------------------- no
+
+"clang -o conftest -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin21 -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/Users/asone0420/.rbenv/versions/2.5.1/openssl/include -I/Users/asone0420/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -DUSE_FFI_CLOSURE_ALLOC -fno-common -pipe conftest.c  -L. -L/Users/asone0420/.rbenv/versions/2.5.1/lib -L/Users/asone0420/.rbenv/versions/2.5.1/openssl/lib -L. -L/Users/asone0420/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lssl -lcrypto  -lruby.2.5.1 -lssl -lcrypto  -lpthread -ldl -lobjc "
+conftest.c:15:57: error: use of undeclared identifier 'SSL_get1_peer_certificate'
+int t(void) { void ((*volatile p)()); p = (void ((*)()))SSL_get1_peer_certificate; return !p; }
+                                                        ^
+1 error generated.
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <openssl/ssl.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     printf("%p", &t);
+11:   }
+12: 
+13:   return 0;
+14: }
+15: int t(void) { void ((*volatile p)()); p = (void ((*)()))SSL_get1_peer_certificate; return !p; }
+/* end */
+
+"clang -o conftest -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0/x86_64-darwin21 -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0/ruby/backward -I/Users/asone0420/.rbenv/versions/2.5.1/include/ruby-2.5.0 -I. -I/Users/asone0420/.rbenv/versions/2.5.1/openssl/include -I/Users/asone0420/.rbenv/versions/2.5.1/include  -D_XOPEN_SOURCE -D_DARWIN_C_SOURCE -D_DARWIN_UNLIMITED_SELECT -D_REENTRANT    -DUSE_FFI_CLOSURE_ALLOC -fno-common -pipe conftest.c  -L. -L/Users/asone0420/.rbenv/versions/2.5.1/lib -L/Users/asone0420/.rbenv/versions/2.5.1/openssl/lib -L. -L/Users/asone0420/.rbenv/versions/2.5.1/lib  -fstack-protector -L/usr/local/lib    -lssl -lcrypto  -lruby.2.5.1 -lssl -lcrypto  -lpthread -ldl -lobjc "
+Undefined symbols for architecture x86_64:
+  "_SSL_get1_peer_certificate", referenced from:
+      _t in conftest-6658e6.o
+ld: symbol(s) not found for architecture x86_64
+clang: error: linker command failed with exit code 1 (use -v to see invocation)
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: #include <openssl/ssl.h>
+ 4: 
+ 5: /*top*/
+ 6: extern int t(void);
+ 7: int main(int argc, char **argv)
+ 8: {
+ 9:   if (argc > 1000000) {
+10:     printf("%p", &t);
+11:   }
+12: 
+13:   return 0;
+14: }
+15: extern void SSL_get1_peer_certificate();
+16: int t(void) { SSL_get1_peer_certificate(); return 0; }
+/* end */
+
+--------------------
+

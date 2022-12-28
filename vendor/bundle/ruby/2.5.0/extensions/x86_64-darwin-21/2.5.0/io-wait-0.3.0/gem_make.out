@@ -1,0 +1,11 @@
+current directory: /Users/asone0420/workspace/runteq/service_name/vendor/bundle/ruby/2.5.0/gems/io-wait-0.3.0/ext/io/wait
+/Users/asone0420/.rbenv/versions/2.5.1/bin/ruby -I /Users/asone0420/.rbenv/versions/2.5.1/lib/ruby/site_ruby/2.5.0 -r ./siteconf20221228-43097-10j4bb5.rb extconf.rb
+
+current directory: /Users/asone0420/workspace/runteq/service_name/vendor/bundle/ruby/2.5.0/gems/io-wait-0.3.0/ext/io/wait
+make DESTDIR\= clean
+
+current directory: /Users/asone0420/workspace/runteq/service_name/vendor/bundle/ruby/2.5.0/gems/io-wait-0.3.0/ext/io/wait
+make DESTDIR\=
+
+current directory: /Users/asone0420/workspace/runteq/service_name/vendor/bundle/ruby/2.5.0/gems/io-wait-0.3.0/ext/io/wait
+make DESTDIR\= install
